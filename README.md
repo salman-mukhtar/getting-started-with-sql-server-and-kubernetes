@@ -84,21 +84,6 @@ we are defining our deployment, which specifies the container we’re going to u
 
 PICTURE 
 
-```
-apiVersion: v1
-kind: Service
-metadata:
-  name: mssql-deployment
-spec:
-  selector:
-    app: mssql
-  ports:
-    - protocol: TCP
-      port: 1433
-      targetPort: 1433
-  type: NodePort
-```
-
 Last but not the least we will expose our deployment as NodePort service. Save the following code as 03-service.yaml and execute it on terminal as kubectl apply -f 03-service.yaml
 
 ```
@@ -145,10 +130,4 @@ insert into person values('yasir','abbasi')
 insert into person values('khalid','hameed')
 insert into person values('shahid','hussain')
 select * from person
-```
-
-**Create a Secret For SQL User SA**
-
-```
-kubectl create secret generic mssql --from-literal=SA_PASSWORD="MyC0m9l&xP@ssw0rd"
 ```
