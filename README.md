@@ -141,8 +141,8 @@ The output will give you the IP address and port you can connect to.
 
 > **_Important:_**
 
-> Here you can see that the IP and port are listed as **192.168.39.155:30729**
-> Make sure to use a comma(,). When you connect to SQL server by using the ip and port like this **192.168.39.155,30729**
+> Here you can see that the IP and port are listed as **192.168.39.155:30729**.
+> Make sure to use a comma(,) when you connect to SQL server by using the ip and port like this **192.168.39.155,30729**
 
 
 | ![images/list-all-kubectl.png](images/list-all-kubectl.png) |
