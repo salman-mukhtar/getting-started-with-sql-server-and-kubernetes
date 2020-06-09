@@ -33,7 +33,6 @@ To start minikube use following command
 [mesalman@salmanpc ~]$  
 ```
 
-
 The first thing you’re going to do is build a secret to pass into your deployment, for your SA password.
 
 ```
@@ -60,9 +59,8 @@ We will save this text in a file. For the purposes of this posts, we will call i
 ```
 kubectl apply -f 01-mssql-pvc.yaml
 ```
-You will see the message “persistentvolumeclaim “mssql-data-claim” created.
 
-Next we are going to build our deployment
+You will see the message **“persistentvolumeclaim “mssql-data-claim”** created. Next we are going to build our deployment
 
 ```
 apiVersion: apps/v1
@@ -102,7 +100,7 @@ spec:
           claimName: pvc0001
 ```
 
-we are defining our deployment, which specifies the container we’re going to use, which in this case it is the latest release of **SQL Server 2017**, and it picks up our predefined SA password. Finally, we are defining our volume mount and its path for where it will be mounted in the VM. Save this off to a file called **02-deployment.yaml**. We will run the following command to deploy this. You will see deployment “mssql-deployment” created.
+we are defining our deployment, which specifies the container we’re going to use, which in this case it is the latest release of **SQL Server 2017**, and it picks up our predefined SA password. Finally, we are defining our volume mount and its path for where it will be mounted in the VM. Save this off to a file called **02-deployment.yaml**. We will run the following command to deploy this. You will see deployment **“mssql-deployment”** created.
 
 ```
 kubectl apply -f deployment.yaml
@@ -143,8 +141,8 @@ The output will give you the IP address and port you can connect to.
 
 > **_Important:_**
 
-> Here you can see that the IP and port are listed as 192.168.39.155:30729
-> Make sure to use a comma(,). When you connect to SQL server by using the ip and port like this 192.168.39.155,30729
+> Here you can see that the IP and port are listed as **192.168.39.155:30729**
+> Make sure to use a comma(,). When you connect to SQL server by using the ip and port like this **192.168.39.155,30729**
 
 
 | ![images/list-all-kubectl.png](images/list-all-kubectl.png) |
