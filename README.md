@@ -1,22 +1,40 @@
 # Getting-Started-with-SQL-Server-and-Kubernetes
 
-For this exercise we are going to create following components.
+For this exercise we are going to use signle node cluster (Minikube). To start we are going to create following components. 
 
-- **Persisted Disk**
+- **A Persisted Disk**
 
 	* Inherently containers have no persisted storage. Obviously, this is a problem for database containers. We are going to define a persistent volume claim to map our storage account.
 
-- **Deployment**
+- **A Deployment**
 
 	* This refers to our container and volume. You will see this defined in the code below.
 
-- **Service**
+- **A Service**
 
 	* We will expose our deployment by using a service as NodePort
 
 # Let’s Start
 
-This assumes that you have minikube up and running. The first thing you’re going to do is build a secret to pass into your deployment, for your SA password.
+Make sure that you have minikube up and running. If you do not have minikube follow this link to install minikube on you system. Linux machine with Minikube [Install Minikube](https://github.com/salman-mukhtar/setting-up-kubernetes-environment/blob/master/README.md)
+
+To start minikube use following command
+
+
+```
+[mesalman@salmanpc ~]$ minikube start
+😄  minikube v1.10.1 on Fedora 32
+✨  Using the kvm2 driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🔄  Restarting existing kvm2 VM for "minikube" ...
+🐳  Preparing Kubernetes v1.18.2 on Docker 19.03.8 ...
+🌟  Enabled addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube"
+[mesalman@salmanpc ~]$  
+```
+
+
+The first thing you’re going to do is build a secret to pass into your deployment, for your SA password.
 
 ```
 kubectl create secret generic mssql --from-literal=SA_PASSWORD="YourPassword"
