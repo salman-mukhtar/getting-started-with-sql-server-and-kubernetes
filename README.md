@@ -141,6 +141,16 @@ minikube service mssql-deployment --url
 
 The output will give you the IP address and port you can connect to.
 
+<div class="panel panel-info">
+**Note**
+{: .panel-heading}
+<div class="panel-body">
+
+NOTE DESCRIPTION
+
+</div>
+</div>
+
 > **_Important:_**
 
 Here you can see that the IP and port are listed as 192.168.39.155:30729
