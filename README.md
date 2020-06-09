@@ -141,17 +141,11 @@ minikube service mssql-deployment --url
 
 The output will give you the IP address and port you can connect to.
 
----
-header-includes:
-    - \usepackage[most]{tcolorbox}
-    - \definecolor{light-yellow}{rgb}{1, 0.95, 0.7}
-    - \newtcolorbox{myquote}{colback=light-yellow,grow to right by=-10mm,grow to left by=-10mm, boxrule=0pt,boxsep=0pt,breakable}
-    - \newcommand{\todo}[1]{\begin{myquote} \textbf{TODO:} \emph{#1} \end{myquote}}
----
+> **_Important:_**
 
-\Important{Here you can see that the IP and port are listed as 192.168.39.155:30729
+Here you can see that the IP and port are listed as 192.168.39.155:30729
 Make sure to use a comma(,) When you connect to SQL server by using the ip and port like this 192.168.39.155,30729
-}
+
 
 | ![images/list-all-kubectl.png](images/list-all-kubectl.png) |
 | ------------------------------------------------------------------- |
