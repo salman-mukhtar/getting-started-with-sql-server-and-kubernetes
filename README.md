@@ -102,7 +102,7 @@ spec:
           claimName: pvc0001
 ```
 
-we are defining our deployment, which specifies the container we’re going to use, which in this case it is the latest release of SQL Server 2017, and it picks up our predefined SA password. Finally, we are defining our volume mount and its path for where it will be mounted in the VM. Save this off to a file called **02-deployment.yaml**. We will run the following command to deploy this. You will see deployment “mssql-deployment” created.
+we are defining our deployment, which specifies the container we’re going to use, which in this case it is the latest release of **SQL Server 2017**, and it picks up our predefined SA password. Finally, we are defining our volume mount and its path for where it will be mounted in the VM. Save this off to a file called **02-deployment.yaml**. We will run the following command to deploy this. You will see deployment “mssql-deployment” created.
 
 ```
 kubectl apply -f deployment.yaml
@@ -140,6 +140,12 @@ minikube service mssql-deployment --url
 ```
 
 The output will give you the IP address and port you can connect to.
+
+> **_NOTE:_**
+
+Here you can see that the IP and port are listed as 192.168.39.155:30729
+Make sure to use a comma(,) When you connect to SQL server by using the ip and port like this 192.168.39.155,30729
+
 
 | ![images/list-all-kubectl.png](images/list-all-kubectl.png) |
 | ------------------------------------------------------------------- |
