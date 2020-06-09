@@ -37,9 +37,12 @@ spec:
       storage: "5Gi"
 ```
 
-We will save this text in a file. For the purposes of this posts, we will call it 01-pvc.yaml. We will then run the kubectl apply -f 01-pvc.yaml command. You will see the message “persistentvolumeclaim “mssql-data-claim” created
+We will save this text in a file. For the purposes of this posts, we will call it **01-mssql-pvc.yaml**. We will then run the following command. 
 
-PICTURE
+```
+kubectl apply -f 01-mssql-pvc.yaml
+```
+You will see the message “persistentvolumeclaim “mssql-data-claim” created.
 
 Next we are going to build our deployment
 
@@ -80,11 +83,15 @@ spec:
         persistentVolumeClaim:
           claimName: pvc0001
 ```
-we are defining our deployment, which specifies the container we’re going to use, which in this case it is the latest release of SQL Server 2017, and it picks up our predefined SA password. Finally, we are defining our volume mount and its path for where it will be mounted in the VM. Save this off to a file called 02-deployment.yaml. We will run the same kubectl apply -f deployment.yaml to deploy this. You will see deployment “mssql-deployment” created.
 
-PICTURE 
+we are defining our deployment, which specifies the container we’re going to use, which in this case it is the latest release of SQL Server 2017, and it picks up our predefined SA password. Finally, we are defining our volume mount and its path for where it will be mounted in the VM. Save this off to a file called **02-deployment.yaml**. We will run the following command to deploy this. You will see deployment “mssql-deployment” created.
 
-Last but not the least we will expose our deployment as NodePort service. Save the following code as 03-service.yaml and execute it on terminal as kubectl apply -f 03-service.yaml
+```
+kubectl apply -f deployment.yaml
+```
+
+Last but not the least we will expose our deployment as NodePort service. Save the following code as **03-mssql-service.yaml**. 
+
 
 ```
 apiVersion: v1
@@ -102,6 +109,12 @@ spec:
 
 ```
 
+and execute it on terminal as
+
+```
+kubectl apply -f 03-mssql-service.yaml
+```
+
 After the service is exposed run the following command.
 
 ```
@@ -109,6 +122,9 @@ minikube service mssql-deployment --url
 ```
 
 The output will give you the IP address and port you can connect to.
+
+| ![images/list-all-kubectl.png](images/list-all-kubectl.png) |
+| ------------------------------------------------------------------- |
 
 
 **SQL Script**
@@ -131,3 +147,9 @@ insert into person values('khalid','hameed')
 insert into person values('shahid','hussain')
 select * from person
 ```
+
+| ![images/create-db.png](images/create-db.png) |
+| ------------------------------------------------------------------- |
+
+| ![images/list-db.png](images/list-db.png) |
+| ------------------------------------------------------------------- |
