@@ -162,11 +162,11 @@ firsrname varchar(25),
 lastname varchar(25)
 
 )
-insert into person values('salman','mukhtar')
-insert into person values('kamran','azeem')
-insert into person values('yasir','abbasi')
-insert into person values('khalid','hameed')
-insert into person values('shahid','hussain')
+insert into person values('sam','jackson')
+insert into person values('billy','bob')
+insert into person values('mike','snow')
+insert into person values('bekky','haward')
+insert into person values('max','nelson')
 select * from person
 ```
 
