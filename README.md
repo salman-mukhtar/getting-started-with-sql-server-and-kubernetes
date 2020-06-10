@@ -153,20 +153,27 @@ The output will give you the IP address and port you can connect to.
 
 ```
 create database Lab1
+
 go
+
 use Lab1
+
 go
+
 create table person
 (
+
 firsrname varchar(25),
 lastname varchar(25)
 
 )
+
 insert into person values('sam','jackson')
 insert into person values('billy','bob')
 insert into person values('mike','snow')
 insert into person values('bekky','haward')
 insert into person values('max','nelson')
+
 select * from person
 ```
 
